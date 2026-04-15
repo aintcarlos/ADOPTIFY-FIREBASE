@@ -1,0 +1,251 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --green:#0b6b2a;
+  --light-green:#2e8b57;
+  --red:#b72828;
+}
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #eef1ee;
+  color: #111;
+  min-height: 100vh;
+}
+
+/* Header */
+/* ===== MODERN NAVBAR ===== */
+.top-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 28px;
+
+  background: linear-gradient(135deg, #0b6b2a, #0a4f20);
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Brand */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: white;
+  padding: 6px;
+}
+
+.brand h1 {
+  font-size: 22px;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+/* Nav buttons container */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Buttons */
+.btn {
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+
+  text-decoration: none;
+  transition: all 0.25s ease;
+
+  border: 2px solid transparent;
+}
+
+/* HOME button */
+.btn.green {
+  background: white;
+  color: #0b6b2a;
+}
+
+.btn.green:hover {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+/* BACK button */
+.btn.small {
+  background: rgba(255,255,255,0.15);
+  color: white;
+}
+
+.btn.small:hover {
+  background: white;
+  color: #0b6b2a;
+}
+
+/* Hover animation */
+.btn:hover {
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* Active click */
+.btn:active {
+  transform: scale(0.95);
+}
+/* Layout */
+.page-grid {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+/* SIDEBAR */
+.sidebar {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Paw icon */
+.paw-decor {
+  font-size: 36px;
+  color: #0b6b2a;
+  margin-bottom: 10px;
+}
+
+/* BUTTON BASE */
+.sidebar .btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  font-weight: 600;
+  font-size: 14px;
+
+  transition: all 0.25s ease;
+}
+
+/* BOOK BUTTON */
+#btnBookMeetup {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  color: white;
+  border: none;
+}
+
+#btnBookMeetup:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* DELETE BUTTON */
+#btnDelete {
+  background: #f1f1f1;
+  color: #333;
+}
+
+#btnDelete:hover {
+  background: #e0e0e0;
+}
+
+/* CANCEL BUTTON */
+#btnCancelMeetup {
+  background: #f8f8f8;
+  color: #c0392b;
+}
+
+#btnCancelMeetup:hover {
+  background: #f1dcdc;
+}
+.paw-decor {
+  font-size: 40px;
+  color: var(--green);
+  margin-bottom: 20px;
+}
+.content h2 {
+  color: var(--green);
+  margin-bottom: 4px;
+}
+.subtitle {
+  color: #444;
+  margin-bottom: 15px;
+}
+
+/* Table */
+.adopt-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.adopt-table th, .adopt-table td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+.adopt-table th {
+  background: #f7f7f7;
+  color: var(--green);
+}
+.adopt-table img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Modal */
+.modal.hidden { display: none; }
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.modal-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 320px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+.modal input {
+  width: 100%;
+  margin: 6px 0;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+.page-footer {
+  text-align: center;
+  padding: 10px;
+  color: #555;
+  margin-top: 20px;
+}

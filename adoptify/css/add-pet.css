@@ -1,0 +1,130 @@
+/* ── Reset ── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background-color: #f1f6f1;
+  padding: 0;
+}
+
+/* ── Header ── */
+header {
+  background: #0b652a;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+#backBtn {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 8px 15px;
+  background: #084d20;
+  border-radius: 20px;
+}
+
+#backBtn:hover {
+  background: #063a18;
+}
+
+/* ── Title ── */
+h2 {
+  color: #0b652a;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 28px;
+}
+
+/* ── Form ── */
+form {
+  background: white;
+  padding: 25px;
+  border-radius: 18px;
+  max-width: 500px;
+  margin: 20px auto;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ── Labels ── */
+label {
+  font-weight: bold;
+  color: #084d20;
+  display: block;
+  margin-bottom: 5px;
+  margin-top: 15px;
+}
+
+/* ── Inputs ── */
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #b8c9b8;
+  font-size: 15px;
+  margin-bottom: 10px;
+  background: #ffffff;
+}
+
+textarea {
+  height: 90px;
+  resize: none;
+}
+
+/* ── Dropzone ── */
+#dropzone {
+  border: 2px dashed #0b652a;
+  padding: 25px;
+  text-align: center;
+  border-radius: 12px;
+  color: #0b652a;
+  font-weight: bold;
+  background: #eef6ee;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  /* ✅ These 3 lines fix the click issue */
+  cursor: pointer;
+  pointer-events: all;
+  position: relative;
+  z-index: 10;
+
+  transition: background 0.2s;
+}
+
+#dropzone:hover {
+  background: #dceedd;
+}
+
+/* ── Preview Image ── */
+#preview {
+  display: block;
+  margin: 10px auto 0;
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+/* ── Submit Button ── */
+button[type="submit"] {
+  width: 100%;
+  padding: 14px;
+  background: #0b652a;
+  border: none;
+  color: white;
+  font-size: 17px;
+  border-radius: 30px;
+  margin-top: 15px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+button[type="submit"]:hover {
+  background: #084d20;
+}

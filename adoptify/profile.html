@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Profile Settings</title>
+  <link rel="stylesheet" href="css/profile.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header>
+  <table width="100%">
+    <tr>
+      <td align="left">
+        <a href="index.html" id="backBtn">← Back</a>
+      </td>
+      <td align="right">
+        <img src="images/logo.png" id="logo">
+      </td>
+    </tr>
+  </table>
+</header>
+
+<h2>PROFILE SETTINGS</h2>
+
+<!-- USER SECTION -->
+<table width="100%">
+  <tr>
+    <td align="center" width="40%">
+      <img src="images/gamit.jpg" id="profileIcon">
+    </td>
+
+    <td align="left" width="60%">
+      <h1 id="usernameDisplay">USERNAME:</h1>
+
+      <h3>Password:</h3>
+      <p id="passwordHidden">******</p>
+
+      <h3>Current Information:</h3>
+      <p id="infoDisplay">None</p>
+    </td>
+  </tr>
+</table>
+
+<br><br>
+
+<!-- BUTTONS -->
+<section style="text-align:center;">
+  <button id="changeUsernameBtn">CHANGE USERNAME</button>
+  <button id="changePasswordBtn">CHANGE PASSWORD</button>
+  <button id="addInfoBtn">ADD INFORMATION</button>
+  <br><br>
+  <button id="logoutBtn" class="logout">LOG OUT</button>
+</section>
+
+<script src="js/profile.js"></script>
+
+</body>
+</html>

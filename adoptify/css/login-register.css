@@ -1,0 +1,161 @@
+/* ===== Reset ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; scroll-behavior: smooth; }
+
+body {
+  font-family: "Times New Roman", Georgia, serif;
+  color: white;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* ===== Slideshow Background ===== */
+section.slideshow {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+section.slideshow figure {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: fade 25s infinite;
+  filter: blur(4px) brightness(0.8);
+}
+
+/* ===== Change these images to your actual backgrounds ===== */
+section.slideshow figure:nth-child(1) { background-image: url('../images/1.jpg'); animation-delay: 0s; }
+section.slideshow figure:nth-child(2) { background-image: url('../images/2.jpg'); animation-delay: 5s; }
+section.slideshow figure:nth-child(3) { background-image: url('../images/3.jpg'); animation-delay: 10s; }
+section.slideshow figure:nth-child(4) { background-image: url('../images/4.jpg'); animation-delay: 15s; }
+section.slideshow figure:nth-child(5) { background-image: url('../images/5.jpg'); animation-delay: 20s; }
+
+@keyframes fade {
+  0% { opacity: 0; }
+  8% { opacity: 1; }
+  20% { opacity: 1; }
+  28% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* ===== Overlay Tint ===== */
+section.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 0;
+}
+
+/* ===== Main Layout ===== */
+main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== Logo Section ===== */
+section.logo-area img {
+  width: 160px;
+  height: auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+  font-size: 42px;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+  margin-top: 10px;
+  letter-spacing: 1px;
+}
+
+h2 {
+  font-size: 22px;
+  color: #eaeaea;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+  font-weight: normal;
+}
+
+/* ===== Buttons ===== */
+nav.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+nav.buttons a {
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 25px;
+  padding: 12px 45px;
+  transition: 0.3s ease;
+  border: 2px solid transparent;
+  font-size: 18px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+}
+
+a.login {
+  background: #2e8b57;
+  color: white;
+  border: 2px solid #013d13;
+}
+
+a.login:hover {
+  background: #3cb371;
+  transform: translateY(-3px);
+}
+
+a.register {
+  background: #2a7ae6;
+  color: white;
+}
+
+a.register:hover {
+  background: #1b5cbf;
+  transform: translateY(-3px);
+}
+
+a.back {
+  display: inline-block;
+  margin-top: 30px;
+  background: white;
+  color: #000;
+  border-radius: 25px;
+  padding: 10px 40px;
+  font-weight: bold;
+  border: 2px solid #111;
+  transition: 0.3s;
+}
+
+a.back:hover {
+  background: #eee;
+  transform: translateY(-3px);
+}
+
+/* ===== Footer ===== */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.3);
+  text-align: center;
+  color: #ddd;
+  font-size: 14px;
+  padding: 12px;
+  letter-spacing: 0.5px;
+}

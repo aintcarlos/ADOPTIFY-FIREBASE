@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Pets | Adoptify</title>
+  <link rel="stylesheet" href="css/my-pets.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="main-nav">
+    <section class="branding">
+        <img src="images/logo.png" alt="Adoptify Logo">
+        <h1>ADOPTIFY</h1>
+    </section>
+
+    <nav class="topnav">
+        <a href="index.html" class="btn-outline">HOME</a>
+        <a href="adopt-now.html" class="btn-outline">← BACK</a>
+    </nav>
+</header>
+
+<!-- PAGE TITLE -->
+<h1 class="page-title">My Posted Pets</h1>
+
+<!-- PET TABLE CONTAINER -->
+<div class="table-wrapper">
+<table id="petsTable">
+    <thead>
+        <tr>
+            <th>Photo</th>
+            <th>Name</th>
+            <th>Species</th>
+            <th>Breed</th>
+            <th>Age</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody id="petsBody">
+        <!-- JS will load pets -->
+    </tbody>
+</table>
+</div>
+
+<script src="js/my-pets.js"></script>
+</body>
+</html>

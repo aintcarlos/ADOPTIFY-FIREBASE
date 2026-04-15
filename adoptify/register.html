@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Register | Adoptify</title>
+<link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+  <!-- Background -->
+  <section class="slideshow">
+    <figure></figure><figure></figure><figure></figure><figure></figure><figure></figure>
+  </section>
+  <section class="overlay"></section>
+  <!-- Main Registration Section -->
+  <main>
+    <section class="logo-area">
+      <img src="images/logo.png" alt="Adoptify Logo">
+    </section>
+
+    <h1>ADOPTIFY</h1>
+    <h2>Join our community of caring adopters</h2>
+
+    <form id="registerForm">
+      <label for="username">Username</label>
+      <input type="text" id="username" required placeholder="Petlover123">
+
+      <label for="password">Password</label>
+      <input type="password" id="password" required placeholder="*******">
+
+      <label for="confirmPassword">Confirm Password</label>
+      <input type="password" id="confirmPassword" required placeholder="*******">
+
+      <label for="contact">Contact Number</label>
+      <input type="tel" id="contact" pattern="[0-9]{11}" maxlength="11" required placeholder="09xxxxxxxxx">
+
+      <label for="email">Email</label>
+      <input type="email" id="email" required placeholder="yourname@gmail.com">
+
+      <input type="submit" value="REGISTER">
+
+      <nav class="back">
+        <a href="login-register.html">BACK</a>
+      </nav>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Adoptify | All Rights Reserved</p>
+  </footer>
+
+  <script src="js/register.js"></script>
+</body>
+</html>
