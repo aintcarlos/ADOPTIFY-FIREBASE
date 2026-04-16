@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Register | Adoptify</title>
+  <link rel="stylesheet" href="css/register.css">
+</head>
+
+<body>
+
+<!-- BACKGROUND -->
+<section class="slideshow"></section>
+<section class="overlay"></section>
+
+<!-- MAIN -->
+<main>
+
+  <section class="logo-area">
+    <img src="images/logo.png">
+  </section>
+
+  <h1>ADOPTIFY</h1>
+  <h2>Create your account</h2>
+
+  <form id="registerForm">
+
+    <input type="text" id="username" placeholder="Username" required>
+
+    <input type="email" id="email" placeholder="Email" required>
+
+    <input type="password" id="password" placeholder="Password" required>
+
+    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+
+    <input type="tel" id="contact" placeholder="09xxxxxxxxx" required>
+
+    <button type="submit">REGISTER</button>
+
+    <a href="login-register.html" class="back">← Back</a>
+
+  </form>
+
+</main>
+
+<footer>
+  <p>© 2025 Adoptify</p>
+</footer>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="js/register.js"></script>
+
+</body>
+</html>

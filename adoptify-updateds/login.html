@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Login | Adoptify</title>
+  <link rel="stylesheet" href="css/login.css" />
+</head>
+<body>
+
+<!-- BACKGROUND -->
+<section class="slideshow">
+  <figure></figure><figure></figure><figure></figure><figure></figure><figure></figure>
+</section>
+
+<section class="overlay"></section>
+
+<!-- LOGIN -->
+<main id="loginScreen">
+
+  <section class="logo-area">
+    <img src="images/logo.png">
+  </section>
+
+  <h1>ADOPTIFY</h1>
+  <h2>Welcome back</h2>
+
+  <form id="loginForm">
+
+  <input type="email" id="email" placeholder="Email" required>
+  <input type="password" id="password" placeholder="Password" required>
+
+  <div class="actions">
+    <button type="submit">LOGIN</button>
+    <a href="login-register.html" class="back">BACK</a>
+  </div>
+
+</form>
+
+  <p class="extra-links">
+    <a href="forget-password.html">Forgot password?</a> |
+    <a href="register.html">Register</a>
+  </p>
+
+</main>
+
+<!-- WAITING -->
+<section class="waiting" id="waitingScreen">
+  <img src="images/logo.png">
+  <h1>ADOPTIFY</h1>
+  <div class="spinner"></div>
+  <p>Logging you in...</p>
+</section>
+
+<footer>
+  <p>© 2025 Adoptify</p>
+</footer>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js"></script>
+<script src="js/login.js"></script>
+
+</body>
+</html>

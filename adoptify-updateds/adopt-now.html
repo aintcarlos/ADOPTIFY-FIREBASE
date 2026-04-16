@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Adoptify — Adopt Now</title>
+  <link rel="stylesheet" href="css/adopt-now.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="top-header">
+  <div class="brand">
+    <h1>ADOPTIFY</h1>
+  </div>
+
+  <nav class="nav-actions">
+    <a href="index.html">Home</a>
+    <a href="add-pet.html" class="add-btn">Add Pet</a>
+    <a href="adoption-list.html">Adoption List</a>
+    <a href="my-pets.html">My Pets</a>
+
+    <div id="profileWrap" class="profile-wrap"></div>
+  </nav>
+</header>
+
+  <!-- LAYOUT -->
+  <main class="page-grid">
+    <!-- left sidebar -->
+    <aside class="sidebar">
+      <div class="paw-decor">🐾</div>
+
+      <section class="filter-card">
+        <h3>Refine Your Search</h3>
+
+        <label>Pet Type</label>
+        <select id="filterType">
+          <option value="">All</option>
+          <option value="Dog">Dog</option>
+          <option value="Cat">Cat</option>
+          <option value="Bird">Bird</option>
+          <option value="Fish">Fish</option>
+          <option value="Hamster">Hamster</option>
+        </select>
+
+        <!-- ⭐ BREED DROPDOWN ⭐ -->
+        <label>Breed</label>
+        <select id="filterBreed">
+          <option value="">All</option>
+        </select>
+
+        <!-- ⭐ REQUIRED BY JS (HIDDEN) ⭐ -->
+        <input id="globalSearch" type="text" style="display:none">
+
+        <label>Gender</label>
+        <div class="radio-row">
+          <label><input name="gender" type="radio" value=""> Any</label>
+          <label><input name="gender" type="radio" value="Male"> Male</label>
+          <label><input name="gender" type="radio" value="Female"> Female</label>
+        </div>
+
+        <label>Max Age (years)</label>
+        <input id="filterAge" type="number" placeholder="e.g. 3" min="0">
+
+        <label>Special Needs</label>
+        <div class="checkbox-list">
+          <label><input type="checkbox" id="sn_med"> Medical Care</label>
+          <label><input type="checkbox" id="sn_behavior"> Behavioral Support</label>
+          <label><input type="checkbox" id="sn_senior"> Senior Pet</label>
+        </div>
+
+        <button id="btnApply" class="btn green full">Apply Filters</button>
+        <button id="btnReset" class="btn full">Reset</button>
+      </section>
+    </aside>
+
+    <!-- content -->
+    <section class="content">
+      <h2>Find Your Pet Companion</h2>
+      <p class="subtitle">Browse through demo pets ready for their forever homes. Click a photo/card for details, book a meetup, or add your own pet.</p>
+
+      <section id="petsGrid" class="pets-grid"></section>
+    </section>
+  </main>
+
+  <!-- PET INFO MODAL -->
+  <section id="petInfoModal" class="modal hidden">
+    <article class="modal-card">
+      <header>
+        <button id="closePetInfo" class="close-btn">✕</button>
+      </header>
+
+      <img id="infoImage" src="" alt="Pet image" class="info-image">
+
+      <h2 id="infoName"></h2>
+
+      <p><strong>Type:</strong> <span id="infoType"></span></p>
+      <p><strong>Age:</strong> <span id="infoAge"></span> years</p>
+      <p><strong>Gender:</strong> <span id="infoGender"></span></p>
+
+      <footer>
+        <p><strong>Bio:</strong></p>
+        <p id="infoBio" class="bio-text"></p>
+        <button id="openAddPetFromInfo" class="btn green">+ Add Pet</button>
+      </footer>
+    </article>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="page-footer">
+    <small>© 2025 Adoptify — Demo pets</small> 
+  </footer>
+
+  <!-- ADD / EDIT PET MODAL -->
+  <div id="petModal" class="modal hidden">
+    <div class="modal-card">
+      <h3 id="petModalTitle">Add Pet</h3>
+      <form id="petForm">
+        <label>Image URL</label>
+        <input id="petImage" type="url" placeholder="https://via.placeholder.com/400x300?text=Dog" required>
+
+        <label>Name</label>
+        <input id="petName" required>
+
+        <label>Type</label>
+        <select id="petType" required>
+          <option value="Dog">Dog</option>
+          <option value="Cat">Cat</option>
+          <option value="Bird">Bird</option>
+          <option value="Rabbit">Rabbit</option>
+          <option value="Fish">Fish</option>
+          <option value="Hamster">Hamster</option>
+        </select>
+
+        <label>Age (years)</label>
+        <input id="petAge" type="number" min="0" required>
+
+        <label>Gender</label>
+        <select id="petGender" required>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+
+        <label>Short Bio</label>
+        <textarea id="petBio" rows="3"></textarea>
+
+        <div class="modal-actions">
+          <button type="submit" class="btn green">Save</button>
+          <button type="button" id="petCancel" class="btn">Cancel</button>
+        </div>
+        <input type="hidden" id="editingId">
+      </form>
+    </div>
+  </div>
+
+  <!-- BOOKING MODAL -->
+  <div id="bookModal" class="modal hidden">
+    <div class="modal-card">
+      <h3>Book a Meetup</h3>
+      <form id="bookForm">
+        <label>Pet</label>
+        <input id="bookPetName" readonly>
+
+        <label>Your Name</label>
+        <input id="bookName" required>
+
+        <label>Contact Email</label>
+        <input id="bookEmail" type="email" required>
+
+        <label>Preferred Date</label>
+        <input id="bookDate" type="date" required>
+
+        <div class="modal-actions">
+          <button class="btn green" type="submit">Book</button>
+          <button type="button" id="bookCancel" class="btn">Cancel</button>
+        </div>
+
+        <input type="hidden" id="bookPetId">
+      </form>
+    </div>
+  </div>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js"></script>
+  <script src="js/adopt-now.js"></script>
+</body>
+</html>
