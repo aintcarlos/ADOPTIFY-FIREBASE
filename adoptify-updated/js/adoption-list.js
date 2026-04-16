@@ -1,5 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
+const firebaseConfig = {
+    apiKey: "AIzaSyBS5BmYxSWu1Km8xyFUuUHLTfTXzbAL-8U",
+    authDomain: "adoptify-64416.firebaseapp.com",
+    projectId: "adoptify-64416",
+    storageBucket: "adoptify-64416.firebasestorage.app",
+    messagingSenderId: "562599307057",
+    appId: "1:562599307057:web:ec9cb7d76aa6f71aac7210",
+    measurementId: "G-KT973512PW"
+  };
 
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
   const db = firebase.firestore();
 
   const tbody = document.getElementById("adoptBody");

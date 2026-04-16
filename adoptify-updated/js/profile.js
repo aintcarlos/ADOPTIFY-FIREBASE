@@ -1,72 +1,94 @@
 // =========================
+// LOAD USER PROFILE
+// =========================
 
-// Show username
-document.getElementById("usernameDisplay").textContent =
-  "USERNAME: " + currentUser.username;
+firebase.auth().onAuthStateChanged(async (user) => {
 
-// Show password as stars
-document.getElementById("passwordHidden").textContent = "******";
+  if (!user) {
+    window.location.href = "login.html";
+    return;
+  }
 
-// Show user info
-document.getElementById("infoDisplay").textContent =
-  currentUser.info || "None";
+  const uid = user.uid;
 
-// Change Username
-document.getElementById("changeUsernameBtn").addEventListener("click", () => {
+  try {
+    const doc = await firebase.firestore().collection("users").doc(uid).get();
+    const data = doc.data();
+
+    // DISPLAY
+    document.getElementById("usernameDisplay").textContent =
+      "USERNAME: " + (data.username || "No username");
+
+    document.getElementById("passwordHidden").textContent = "******";
+
+    document.getElementById("infoDisplay").textContent =
+      data.info || "None";
+
+  } catch (err) {
+    console.error(err);
+  }
+});
+
+
+// =========================
+// CHANGE USERNAME
+// =========================
+document.getElementById("changeUsernameBtn").addEventListener("click", async () => {
   const newU = prompt("Enter new username:");
   if (!newU) return;
 
-  const idx = users.findIndex(u => u.username === currentUser.username);
-  users[idx].username = newU;
-  currentUser.username = newU;
+  const user = firebase.auth().currentUser;
 
-  localStorage.setItem("users", JSON.stringify(users));
-  localStorage.setItem("currentUser", JSON.stringify(currentUser));
+  await firebase.firestore().collection("users").doc(user.uid).update({
+    username: newU
+  });
 
   alert("Username updated!");
   location.reload();
 });
 
-// Change Password
-document.getElementById("changePasswordBtn").addEventListener("click", () => {
+
+// =========================
+// CHANGE PASSWORD (REAL FIREBASE)
+// =========================
+document.getElementById("changePasswordBtn").addEventListener("click", async () => {
   const newP = prompt("Enter new password:");
   if (!newP) return;
 
-  const idx = users.findIndex(u => u.username === currentUser.username);
-  users[idx].password = newP;
-  currentUser.password = newP;
+  const user = firebase.auth().currentUser;
 
-  localStorage.setItem("users", JSON.stringify(users));
-  localStorage.setItem("currentUser", JSON.stringify(currentUser));
-
-  alert("Password changed!");
+  try {
+    await user.updatePassword(newP);
+    alert("Password updated!");
+  } catch (err) {
+    alert("❌ " + err.message);
+  }
 });
 
-// Add Information
-document.getElementById("addInfoBtn").addEventListener("click", () => {
+
+// =========================
+// ADD INFORMATION
+// =========================
+document.getElementById("addInfoBtn").addEventListener("click", async () => {
   const info = prompt("Enter new info:");
   if (!info) return;
 
-  const idx = users.findIndex(u => u.username === currentUser.username);
-  users[idx].info = info;
-  currentUser.info = info;
+  const user = firebase.auth().currentUser;
 
-  localStorage.setItem("users", JSON.stringify(users));
-  localStorage.setItem("currentUser", JSON.stringify(currentUser));
+  await firebase.firestore().collection("users").doc(user.uid).update({
+    info: info
+  });
 
   alert("Information updated!");
   location.reload();
 });
 
-// Logout
+
+// =========================
+// LOGOUT
+// =========================
 document.getElementById("logoutBtn").addEventListener("click", () => {
-  localStorage.removeItem("currentUser");
-  alert("You have logged out.");
-  location.href = "login.html";
-});
-function logout() {
   firebase.auth().signOut().then(() => {
-    localStorage.removeItem("currentUser");
     window.location.href = "login.html";
   });
-}
+});
