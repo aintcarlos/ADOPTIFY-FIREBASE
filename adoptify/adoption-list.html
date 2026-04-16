@@ -8,80 +8,85 @@
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="top-header">
-    <div class="brand">
-      <img src="images/logo.png" alt="Adoptify logo" class="logo">
-      <h1>ADOPTIFY</h1>
-    </div>
+<header class="top-header">
+  <div class="brand">
+    <img src="images/logo.png" class="logo">
+    <h1>ADOPTIFY</h1>
+  </div>
 
-    <nav class="nav-actions">
-      <a href="index.html" class="btn green small">🏠 HOME</a>
-      <a href="adopt-now.html" class="btn small">⬅ BACK</a>
-    </nav>
-  </header>
+  <nav class="nav-actions">
+    <a href="index.html" class="btn small">🏠 HOME</a>
+    <a href="adopt-now.html" class="btn small">⬅ BACK</a>
+  </nav>
+</header>
 
-  <main class="page-grid">
+<main class="page-grid">
 
-    <!-- SIDEBAR -->
-    <aside class="sidebar">
-      <div class="paw-decor">🐾</div>
-      <button class="btn green full" id="btnBookMeetup">📅 Book Meetup</button>
-      <button class="btn red full" id="btnDelete">🗑️ Delete Selected Pets</button>
+  <aside class="sidebar">
+    <div class="paw-decor">🐾</div>
 
-      <!-- ⭐ NEW BUTTON YOU REQUESTED -->
-      <button class="btn yellow full" id="btnCancelMeetup">❌ Cancel Meetup</button>
-    </aside>
+    <button class="btn full" id="btnBookMeetup">📅 Book Meetup</button>
+    <button class="btn full" id="btnDelete">🗑️ Delete Selected Pets</button>
+    <button class="btn full" id="btnCancelMeetup">❌ Cancel Meetup</button>
+  </aside>
 
-    <!-- CONTENT -->
-    <section class="content">
-      <h2>Adoption List Management</h2>
-      <p class="subtitle">Here where you can edit, proceed, or remove your added pets.</p>
+  <section class="content">
+    <h2>Adoption List Management</h2>
 
-      <table class="adopt-table" id="adoptTable">
-        <thead>
-          <tr>
-            <th></th>
-            <th>PHOTO</th>
-            <th>NAME</th>
-            <th>SPECIES</th>
-            <th>AGE</th>
-            <th>STATUS</th>
-          </tr>
-        </thead>
-        <tbody id="adoptBody">
-          <!-- Pets inserted here -->
-        </tbody>
-      </table>
-    </section>
-  </main>
-
-  <!-- BOOKING MODAL -->
-  <section id="bookModal" class="modal hidden">
-    <article class="modal-card">
-      <h3>Book a Meetup</h3>
-      <form id="bookForm">
-        <p><strong>Pet:</strong> <span id="bookPetName"></span></p>
-        <label>Your Name</label>
-        <input id="bookName" required>
-        <label>Contact Email</label>
-        <input id="bookEmail" type="email" required>
-        <label>Preferred Date</label>
-        <input id="bookDate" type="date" required>
-
-        <div class="modal-actions">
-          <button class="btn green" type="submit">Confirm</button>
-          <button type="button" id="bookCancel" class="btn">Cancel</button>
-        </div>
-      </form>
-    </article>
+    <table class="adopt-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>PHOTO</th>
+          <th>NAME</th>
+          <th>TYPE</th>
+          <th>AGE</th>
+          <th>STATUS</th>
+        </tr>
+      </thead>
+      <tbody id="adoptBody"></tbody>
+    </table>
   </section>
 
-  <footer class="page-footer">
-    <small>© 2025 Adoptify — Adoption Management</small>
-  </footer>
-  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
-  <script src="js/adoption-list.js"></script>
+</main>
+
+<!-- MODAL -->
+<section id="bookModal" class="modal hidden">
+  <article class="modal-card">
+    <h3>Book a Meetup</h3>
+
+    <form id="bookForm">
+      <p><strong>Pet:</strong> <span id="bookPetName"></span></p>
+
+      <input id="bookName" placeholder="Your Name" required>
+      <input id="bookEmail" type="email" placeholder="Email" required>
+      <input id="bookDate" type="date" required>
+
+      <div class="modal-actions">
+        <button type="submit" class="btn">Confirm</button>
+        <button type="button" id="bookCancel" class="btn">Cancel</button>
+      </div>
+    </form>
+
+  </article>
+</section>
+
+<!-- FIREBASE -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
+<!-- 🔥 IMPORTANT -->
+<script>
+const firebaseConfig = {
+  apiKey: "YOUR_KEY",
+  authDomain: "YOUR_DOMAIN",
+  projectId: "YOUR_PROJECT_ID"
+};
+
+firebase.initializeApp(firebaseConfig);
+</script>
+
+<script src="js/adoption-list.js"></script>
+
 </body>
 </html>
