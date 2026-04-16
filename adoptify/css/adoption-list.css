@@ -31,6 +31,8 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
+  font-family: sans-serif;
+
 }
 
 .logo {
@@ -45,6 +47,8 @@ body {
   font-size: 22px;
   letter-spacing: 1px;
   font-weight: 700;
+  color: white;
+ 
 }
 
 /* Nav buttons container */
@@ -70,7 +74,7 @@ body {
 /* HOME button */
 .btn.green {
   background: white;
-  color: #0b6b2a;
+  color: #ffffff;
 }
 
 .btn.green:hover {
@@ -144,13 +148,18 @@ body {
 }
 
 /* BOOK BUTTON */
+/* BOOK BUTTON (FINAL FIX) */
 #btnBookMeetup {
   background: linear-gradient(135deg, #2ecc71, #27ae60);
   color: white;
   border: none;
+  cursor: pointer;
+  z-index: 10;
+  position: relative;
 }
 
 #btnBookMeetup:hover {
+  background: linear-gradient(135deg, #27ae60, #1e8449);
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0,0,0,0.2);
 }
@@ -214,7 +223,10 @@ body {
 }
 
 /* Modal */
-.modal.hidden { display: none; }
+.modal.hidden { 
+  display: none !important; 
+  pointer-events: none;
+}
 .modal {
   position: fixed;
   inset: 0;
@@ -248,4 +260,13 @@ body {
   padding: 10px;
   color: #555;
   margin-top: 20px;
+}
+#btnBookMeetup:hover {
+  background: linear-gradient(135deg, #27ae60, #1e8449);
+  color: white;
+  border: none;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  position: relative;
+  z-index: 5;
 }
