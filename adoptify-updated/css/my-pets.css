@@ -1,0 +1,223 @@
+/* ===== Adoptify Theme ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f3f7f3;
+  font-family: "Times New Roman", serif;
+}
+
+/* ===== NAVBAR ===== */
+.main-nav {
+  width: 100%;
+  height: 85px;
+  background: #0b652a;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 60px;
+  color: white;
+}
+
+.branding {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.branding img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: white;
+  padding: 6px;
+}
+
+.branding h1 {
+  font-size: 34px;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+}
+
+.topnav {
+  display: flex;
+  gap: 15px;
+}
+
+/* Outline Buttons */
+.btn-outline {
+  padding: 10px 22px;
+  border-radius: 25px;
+  border: 2px solid white;
+  color: white;
+  font-weight: bold;
+  transition: 0.25s;
+  text-decoration: none;
+}
+
+.btn-outline:hover {
+  background: white;
+  color: #0b652a;
+}
+
+/* ===== Page Title ===== */
+.page-title {
+  text-align: center;
+  margin-top: 110px;
+  margin-bottom: 25px;
+  color: #0b652a;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+/* ===== TABLE ===== */
+.table-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+table {
+  width: 90%;
+  max-width: 1200px;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+th {
+  background: #0b652a;
+  color: white;
+  padding: 14px;
+  font-size: 16px;
+}
+
+td {
+  padding: 12px;
+  border-bottom: 1px solid #e2e2e2;
+  font-size: 15px;
+}
+
+tr:hover {
+  background: #eef5ee;
+}
+
+/* Images */
+td img {
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Action buttons */
+.action-btn {
+  padding: 8px 16px;
+  border-radius: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  border: 2px solid;
+  transition: 0.25s;
+}
+
+.edit-btn {
+  color: #0b652a;
+  border-color: #0b652a;
+  background: white;
+}
+
+.edit-btn:hover {
+  background: #0b652a;
+  color: white;
+}
+
+.delete-btn {
+  color: #a10000;
+  border-color: #a10000;
+  background: white;
+}
+
+.delete-btn:hover {
+  background: #a10000;
+  color: white;
+}
+
+/* ===== EDIT MODAL (Matches Adoptify UI) ===== */
+#editModal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+}
+
+.modal-box {
+  width: 400px;
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.modal-box h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #0b652a;
+}
+
+.modal-box label {
+  font-weight: bold;
+  color: #0b652a;
+}
+
+.modal-box input,
+.modal-box select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0 14px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* Modal Buttons */
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.modal-save {
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 2px solid #0b652a;
+  background: #0b652a;
+  color: white;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.modal-save:hover {
+  background: white;
+  color: #0b652a;
+}
+
+.modal-cancel {
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 2px solid #a10000;
+  background: #a10000;
+  color: white;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.modal-cancel:hover {
+  background: white;
+  color: #a10000;
+}
